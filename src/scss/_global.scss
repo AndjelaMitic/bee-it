@@ -1,0 +1,32 @@
+$light_blue: #38bdff;
+$middle_blue: #002f9d;
+$dark_blue: #021f59;
+$paragraf: #757575;
+
+body{
+  margin: 0;
+  padding: 0;
+  position: relative;
+  
+  a{
+    text-decoration: none;
+  }
+  .full-width{
+    width: 100%;
+  }
+  .flex{
+    display: flex;
+    &.align-items{
+      align-items: center;
+    }
+    &.justify-between{
+      justify-content: space-between;
+    }
+    &.start{
+      justify-content: flex-start;
+    }
+    &.end{
+      justify-content: flex-end;
+    }
+  }
+}

@@ -7,12 +7,9 @@ var watch = require('gulp-watch');
 
 var styleSRC = 'src/scss/**/*.scss';
 var styleDIST = 'dist/css/';
-// var watchstyleSRC = 'src/scss/**/*.css';
 
 var jsSRC = 'src/js/**/*.js';
 var jsDIST = 'dist/js/';
-// var watchjsSRC = 'src/js/**/*.js';
-
 
 gulp.task('style', async function(){
   gulp.src(styleSRC)
