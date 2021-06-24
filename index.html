@@ -2,32 +2,32 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" container="width=device-width, initial-scale=1">
+    <title>Bee IT</title>
     <link rel="stylesheet" type="text/css" href="./dist/css/style.min.css">
     <link rel="stylesheet" type="text/css" href="./dist/css/responsive.min.css">
     <script type="text/javascript" src='./dist/js/app.js'></script>
-    <title>Bee IT</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
-  </body>
   <header>
-    <div class='container'>
+    <div class='container container--large'>
       <div class='flex full-width align-items justify-between'>
-        <div class='flex start'>
-          <a href='' class='logo'>
-            <img src='./assets/images/world-travel.png' alt='orld Travel' title='World Travel' width='73' height='71'>
+        <div class='flex justify-start primaryNav'>
+          <a href='' class='primaryNav__logo'>
+            <img src='./assets/images/world-travel.png' alt='World Travel' title='World Travel' width='73' height='71'>
           </a>
-          <div class='primary-nav'>
-            <ul>
-              <li><a href="#">Info</a></li>
-              <li><a href="#"></a>About us</li>
-              <li><a href="#"></a>Contact</li>
-            </ul>
-          </div>
+          <ul>
+            <li><a href="#">Info</a></li>
+            <li><a href="#"></a>About us</li>
+            <li><a href="#"></a>Contact</li>
+          </ul>
         </div>
-        <div class='flex end'>
-          <div class='secondary-nav'>
-            <a class='login' href="#">Login</a>
-            <a class="currency" href="#">EN-UK($)</a>
+        <div class='flex justify-end'>
+          <div class='secondaryNav'>
+            <a class='secondaryNav__login' href="#">Login</a>
+            <a class="secondaryNav__currency" href="#">EN-UK($)</a>
           </div>
         </div>
       </div>
@@ -38,80 +38,169 @@
       <img src="./assets/images/Slide-1.jpg" alt="">
     </section>
     <section class='advantages'>
-      <div class='container'>
-        <p class='lead'>Low cost doens'm mean cheap</p>
-        <h2>Fly smart, fly with Green Earth</h2>
-        <div class='advantage-item'>
-            <div class='image'>
+      <div class='container flex wrap justify-between'>
+        <p class='advantages__lead'>Low cost doens'm mean cheap</p>
+        <h2 class='advantages__heading'>Fly smart, fly with Green Earth</h2>
+        <div class='advantages__item'>
+            <div class='advantages__image'>
               <img src="./assets/images/reclinable-seats.png" width="97" height="98" alt="Reclinable seats" title="Reclinable seats">
             </div>
-            <div class='description'>
-              <h4>Reclinable seats</h4>
-              <p>Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
+            <div class='advantages__description'>
+              <h4 class='advantages__title'>Reclinable seats</h4>
+              <p "advantages__text">Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class='advantage-item'>
-            <div class='image'>
+        <div class='advantages__item'>
+            <div class='advantages__image'>
               <img src="./assets/images/plenty-of-legroom.png" width="97" height="98" alt="Plenty of legroom" title="Plenty of legroom">
             </div>
-            <div class='description'>
-              <h4>Plenty of legroom</h4>
-              <p>Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
+            <div class='advantages__description'>
+              <h4 class='advantages__title'>Plenty of legroom</h4>
+              <p "advantages__text">Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class='advantage-item'>
-            <div class='image'>
+        <div class='advantages__item'>
+            <div class='advantages__image'>
               <img src="./assets/images/free-cabin-luggage.png" width="97" height="98" alt="Free cabin luggage" title="Free cabin luggage">
             </div>
-            <div class='description'>
-              <h4>Free cabin luggage</h4>
-              <p>Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
+            <div class='advantages__description'>
+              <h4 class='advantages__title'>Free cabin luggage</h4>
+              <p "advantages__text">Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class='advantage-item'>
-            <div class='image'>
+        <div class='advantages__item'>
+            <div class='advantages__image'>
               <img src="./assets/images/friendly-crew.png" width="97" height="98" alt="Friendly crew" title="Friendly crew">
             </div>
-            <div class='description'>
-              <h4>Friendly crew</h4>
-              <p>Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
+            <div class='advantages__description'>
+              <h4 class='advantages__title'>Friendly crew</h4>
+              <p class="advantages__text">Lorem ipsum dolar sit amet,consectetur ipsicing elit, sed do eiusmod tempor inciunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
       </div>
     </section>
     <section class='offers'>
+      <div class="container flex wrap">
+        <h3 class="offers__heading">Showing our offers from</h3>
+        <div class="offers__item offers__item--promotion">
+          <img class='offers_img' src="./assets/images/london.jpg" width="240" height="170" alt="London" title="London">
+          <div class="offers__description">
+            <h4 class='offers__title'>London</h4>
+            <p class='offers_price'>from 59</p>
+            <a class="offers__link" href="#">Book now</a>
+          </div>
+        </div>
+        <div class="offers__item">
+          <img class='offers_img' src="./assets/images/hamburg.jpg" width="240" height="170" alt="Hamburg" title="Hamburg">
+          <div class="offers__description">
+            <h4 class='offers__title'>Hamburg</h4>
+            <p class='offers__price'>from 79</p>
+            <a class='offers__link' href="#">Book now</a>
+          </div>
+        </div>
+        <div class="offers__item">
+          <img class='offers_img' src="./assets/images/alicante.jpg" width="240" height="170" alt="Alicante" title="Alicante">
+          <div class="offers__description">
+            <h4 class='offers__title'>Alicante</h4>
+            <p class="offers__price">from 89</p>
+            <a class="offers__link" href="#">Book now</a>
+          </div>
+        </div>
+        <div class="offers__item">
+          <img class='offers_img' src="./assets/images/milano.jpg" width="240" height="170" alt="Milano" title="Milano">
+          <div class="offers__description">
+            <h4 class='offers__title'>Milano</h4>
+            <p class='offers__price'>from 119</p>
+            <a class='offers__link' href="#">Book now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='inspire'>
       <div class="container">
-        <h3>Showing our offers from</h3>
-        <div class="offer-item low-rate">
-          <img src="./assets/images/london.jpg" width="240" height="170" alt="London" title="London">
-          <div class="description">
-            <h4>London</h4>
-            <p>from 59</p>
-            <a href="#">Book now</a>
-          </div>
+        <p class='inspire__text'>Don't know where to go? <a href='#' class="inspire__link inspire__link--dashed">Let us inspire you</a></p>
+      </div>
+    </section>
+    <section class="packages">
+      <div class="container">
+        <div class='packages__info'>
+          <p class='packages__text packages__text--uppercase'>Quality from the inside</p>
+          <h3 class="packages__title">Travel the way you want</h3>
+          <p class="packages__text">Lorem ipsun dolor sit amet, cons adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ed minim veniam, quis nostrud exercitation ulnisi ut</p>
         </div>
-        <div class="offer-item">
-          <img src="./assets/images/hamburg.jpg" width="240" height="170" alt="Hamburg" title="Hamburg">
-          <div class="description">
-            <h4>Hamburg</h4>
-            <p>from 79</p>
-            <a href="#">Book now</a>
-          </div>
-        </div>
-        <div class="offer-item">
-          <img src="./assets/images/alicante.jpg" width="240" height="170" alt="Alicante" title="Alicante">
-          <div class="description">
-            <h4>Alicante</h4>
-            <p>from 89</p>
-            <a href="#">Book now</a>
-          </div>
-        </div>
-        <div class="offer-item">
-          <img src="./assets/images/milano.jpg" width="240" height="170" alt="Milano" title="Milano">
-          <div class="description">
-            <h4>Milano</h4>
-            <p>from 119</p>
-            <a href="#">Book now</a>
+        <p class="packages__text-right">
+          <a href="#" class="packages__link packages__link--dashed">View all servises & upgrades</a>
+        </p>
+        <div class='tabs js-packages-tabs'>
+          <ul class="tabs__navigation clearfix">
+            <li class='tabs__link'><a data-target='regular' class='tabs__btn tabs__btn--active js-btn' href='#'>Regular</a></li>
+            <li class='tabs__link'><a data-target='plus' class='tabs__btn js-btn' href='#'>Plus</a></li>
+            <li class='tabs__link'><a data-target='premium' class='tabs__btn js-btn' href='#'>Premium</a></li>
+          </ul>
+          <div class="tabs__wrapper">
+            <div class="tabs__content tabs__content--active js-content" data-content='regular'>
+              <div class="flex center">
+                <div class="column-3">
+                  <img src="./assets/images/regular.png" width='200' height="200" alt="Regular travel">
+                </div>
+                <div class="column-3">
+                  <ul class='tabs__included'>
+                    <li>Reclinable seats</li>
+                    <li>1 Hand luggage</li>
+                    <li>Extra leg room</li>
+                  </ul>
+                </div>
+                <div class="column-3">
+                  <ul class='tabs__excluded'>
+                    <li>Extra cabin luggage</li>
+                    <li>Extra hold luggage</li>
+                    <li>Lounge access </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__content js-content" data-content='plus'>
+              <div class="flex center">
+                <div class="column-3">
+                  <img src="./assets/images/regular.png" width='200' height="200" alt="Plus travel">
+                </div>
+                <div class="column-3">
+                  <ul class='tabs__included'>
+                    <li>Reclinable seats</li>
+                    <li>1 Hand luggage</li>
+                    <li>Extra leg room</li>
+                  </ul>
+                </div>
+                <div class="column-3">
+                  <ul class='tabs__excluded'>
+                    <li>Extra cabin luggage</li>
+                    <li>Extra hold luggage</li>
+                    <li>Lounge access </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="tabs__content js-content" data-content='premium'>
+              <div class="flex center">
+                <div class="column-3">
+                  <img src="./assets/images/regular.png" width='200' height="200" alt="Premium travel">
+                </div>
+                <div class="column-3">
+                  <ul class='tabs__included'>
+                    <li>Reclinable seats</li>
+                    <li>1 Hand luggage</li>
+                    <li>Extra leg room</li>
+                  </ul>
+                </div>
+                <div class="column-3">
+                  <ul class='tabs__excluded'>
+                    <li>Extra cabin luggage</li>
+                    <li>Extra hold luggage</li>
+                    <li>Lounge access </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -119,4 +208,5 @@
   </main>
   <footer>
   </footer>
+</body>
 </html>

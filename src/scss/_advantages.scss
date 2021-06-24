@@ -1,13 +1,8 @@
 .advantages{
   .container{
-    max-width: 100%;
-    width: 1030px;
     margin: 60px auto 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
-    .lead{
+  }
+  &__lead{
       text-align: center;
       text-transform: uppercase;
       font-size: 16px;
@@ -15,39 +10,36 @@
       width: 100%;
       margin: 0 0 10px 0;
     }
-    h2{
+    &__heading{
       text-align: center;
       font-size: 50px;
       color: $middle_blue;
       width: 100%;
       margin: 0 0 70px 0;
     }
-    .advantage-item{
+    &__item{
       flex: 0 0 40%;
       max-width: 40%;
-
-      .image{
-        width: auto;
-        display: inline-block;
-        float: left;
-      }
-      .description{
-        max-width: calc(100% - 132px);
-        margin-left: 35px;
-        float: right;
-        margin-bottom: 55px;
-
-        h4{
-          font-size: 24px;
-          color:$dark_blue;
-          margin: 0 0 15px 0;
-        }
-        p{
-          font-size: 18px;
-          color: $dark_blue;
-          margin: 0;
-        }
-      }
     }
-  }
+    &__image{
+      width: auto;
+      display: inline-block;
+      float: left;
+    }
+    &__description{
+      max-width: calc(100% - 132px);
+      margin-left: 35px;
+      float: right;
+      margin-bottom: 55px;
+    }
+    &__title{
+      font-size: 24px;
+      color:$dark_blue;
+      margin: 0 0 15px 0;
+    }
+    &__text{
+      font-size: 18px;
+      color: $dark_blue;
+      margin: 0;
+    }
 }

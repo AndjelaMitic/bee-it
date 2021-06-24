@@ -1,0 +1,35 @@
+$phone_min: 320px;
+$phone_max: 720px;
+$tablet_min: 721px;
+$tablet_max:1024px;
+$desktop_min: 1025px;
+
+@mixin mq-mobile(){
+  @media (min-width: $phone_min) and (max-width: $phone_max){
+    @content;
+  }
+}
+
+@mixin mq-mobile-up(){
+  @media (min-width: $phone_min){
+    @content;
+  }
+}
+
+@mixin mq-tablet(){
+  @media (min-width: $tablet_min) and (max-width: $tablet_max){
+    @content;
+  }
+}
+
+@mixin mq-tablet-up(){
+  @media (min-width: $tablet_min){
+    @content;
+  }
+}
+
+@mixin mq-desktop-up(){
+  @media (min-width: $desktop_min){
+    @content;
+  }
+}

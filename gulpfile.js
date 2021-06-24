@@ -1,41 +1,43 @@
 var gulp = require('gulp');
-var rename = require('gulp-rename');
 var sass = require('gulp-sass');
+var rename = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var watch = require('gulp-watch');
 
-var styleSRC = 'src/scss/**/*.scss';
-var styleDIST = 'dist/css/';
+// SASS
+function scss(cb) {
+   return gulp.src(`src/scss/**/*.scss`)
+     .pipe(sourcemaps.init())
+     .pipe(sass({
+       errorLogToConsole: true,
+       outputStyle: 'compressed'
+     }))
+     .on('error',console.error.bind(console))
+     .pipe(autoprefixer({
+       browsers:['last 2 versions'],
+       cascade:false
+     }))
+     .pipe(sourcemaps.write('./'))
+     .pipe(rename({suffix:'.min'}))
+    .pipe(gulp.dest(`dist/css/`))
 
-var jsSRC = 'src/js/**/*.js';
-var jsDIST = 'dist/js/';
+   cb();
+}
 
-gulp.task('style', async function(){
-  gulp.src(styleSRC)
-  .pipe(sourcemaps.init())
-  .pipe(sass({
-    errorLogToConsole: true,
-    outputStyle: 'compressed'
-  }))
-  .on('error',console.error.bind(console))
-  .pipe(autoprefixer({
-    browsers:['last 2 versions'],
-    cascade:false
-  }))
-  .pipe(sourcemaps.write('./'))
-  .pipe(rename({suffix:'.min'}))
-  .pipe(gulp.dest(styleDIST))
-});
+exports.scss = scss;
 
-gulp.task('js', async function(){
-  gulp.src(jsSRC)
-  .pipe(gulp.dest(jsDIST))
-});
+// JS
+function js(cb) {
+   return gulp.src(`src/js/**/*.js`)
+    .pipe(gulp.dest(`dist/js/`))
+   cb();
+}
 
-gulp.task('watch',gulp.parallel('style','js'), async function(){
-   gulp.watch(styleSRC,['style']);
-   gulp.watch(jsSRC,['js'])
-});
+exports.js = js;
 
-gulp.task('default',gulp.series('style','js','watch'));
+function wtc() {
+     return gulp.watch(['src/scss/**/*.scss'], scss);
+     gulp.watch(['src/js/**/*.js'], js);
+}
+
+exports.default = wtc;

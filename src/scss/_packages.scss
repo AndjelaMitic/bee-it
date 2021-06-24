@@ -1,0 +1,93 @@
+.packages{
+  background-color: $dark-blue;
+  padding: 40px 0;
+
+  &__info{
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom:60px;
+    h3{
+      color: $light-blue;
+      font-size: 45px;
+      font-weight: 700;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &__text{
+    color: white;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    &--uppercase{
+      text-transform: uppercase;
+    }
+  }
+
+  &__text-right{
+    text-align: right;
+  }
+  &__link{
+    color: $light-blue;
+    font-size: 20px;
+    font-weight: 400;
+    &--dashed{
+      border-bottom: 1px dashed $light-blue;
+    }
+  }
+
+  .tabs{
+    background-color: white;
+
+    &__navigation{
+      padding: 0;
+      margin: 0;
+    }
+    &__link{
+      width: 33.33%;
+      list-style-type: none;
+      display: inline-block;
+      float: left;
+      text-align: center;
+      background-color: $light-gray;
+    }
+
+    &__btn{
+      width: 100%;
+      display: block;
+      padding: 15px;
+      font-weight: 600;
+      font-size: 24px;
+      color: $paragraf;
+
+      &--active{
+        background-color: white;
+        color: $middle_blue;
+        font-weight: 700;
+        position: relative;
+
+        &::before{
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background-color: $light-blue;
+        }
+      }
+    }
+
+    &__content{
+      padding: 30px 70px;
+      display: none;
+
+      &--active{
+        display: block;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,23 @@
+.inspire{
+  padding: 40px 0;
+  text-align: center;
+
+  @include mq-mobile(){
+    text-align: left;
+  }
+
+  &__text{
+    color: $middle_blue;
+    font-weight: 400;
+    font-size: 30px;
+  }
+
+  &__link{
+    color: $middle_blue;
+    font-weight: 700;
+    &--dashed{
+      border-bottom: 1px dashed $middle_blue;
+    }
+  }
+  
+}

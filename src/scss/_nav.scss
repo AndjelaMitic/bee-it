@@ -1,13 +1,9 @@
 header{
-  .container{
-    padding: 20px 0;
-    width: 100%;
-    max-width:1300px;
-    margin: 0 auto;
+  padding: 20px 0;
     * {
       align-items: center;
     }
-    .primary-nav{
+    .primaryNav{
       ul{
         padding: 0;
         li{
@@ -21,15 +17,17 @@ header{
         }
       }
     }
-    .secondary-nav{
+    .secondaryNav{
       text-transform: uppercase;
       font-size: 16px;
       color: $dark_blue;
-      .login{
+
+      &__login{
         padding-right: 20px;
         border-right: 1px solid #e5e7e9;
       }
-      .currency{
+
+      &__currency{
         position: relative;
         padding-left: 50px;
         margin-left: 20px;
@@ -41,9 +39,8 @@ header{
           content: url(../../assets/images/Flag_of_the_United_Kingdom.png);
           display: block;
           width: 30px;
-          height: 15px;
+          height: 15px; 
         }
       }
     }
-  }
 }
