@@ -2,7 +2,11 @@ $light_blue: #38bdff;
 $middle_blue: #002f9d;
 $dark_blue: #021f59;
 $paragraf: #757575;
-$light-gray: #f2f2f2;
+$light-grey: #f2f2f2;
+$middle-grey: #b3b3b3;
+$dark-grey:#666666;
+$yellow: #ffed28;
+$dark-yellow: #b3a61d;
 
 *, ::after, ::before {
   box-sizing: border-box;
@@ -20,6 +24,7 @@ body{
   margin: 0;
   padding: 0;
   position: relative;
+  font-family: 'Open Sans', sans-serif;
 
   a{
     text-decoration: none;
@@ -53,14 +58,18 @@ body{
     .column-3{
       max-width: 33.33%;
       flex: 0 0 33.33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
   .container{
-    max-width: 1030px;
+    max-width: 1070px;
+    padding: 0 20px;
     width: 100%;
     margin: 0 auto;
     &--large{
-      max-width: 1300px;
+      max-width: 1340px;
     }
   }
 }

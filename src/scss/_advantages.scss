@@ -18,8 +18,14 @@
       margin: 0 0 70px 0;
     }
     &__item{
-      flex: 0 0 40%;
-      max-width: 40%;
+      @include mq-desktop-up(){
+        flex: 0 0 40%;
+        max-width: 40%;
+      }
+      @include mq-tablet(){
+        flex: 0 0 49%;
+        max-width: 49%
+      }
     }
     &__image{
       width: auto;

@@ -1,6 +1,6 @@
 .packages{
   background-color: $dark-blue;
-  padding: 40px 0;
+  padding: 50px 0;
 
   &__info{
     max-width: 520px;
@@ -41,6 +41,23 @@
   .tabs{
     background-color: white;
 
+    &--desktop{
+      @include mq-tablet-up(){
+        display: block;
+      }
+      @include mq-mobile(){
+        display: none;
+      }
+    }
+    &--mobile{
+      @include mq-tablet-up(){
+        display: none;
+      }
+      @include mq-mobile(){
+        display: block;
+      }
+    }
+
     &__navigation{
       padding: 0;
       margin: 0;
@@ -51,7 +68,7 @@
       display: inline-block;
       float: left;
       text-align: center;
-      background-color: $light-gray;
+      background-color: $light-grey;
     }
 
     &__btn{
@@ -81,13 +98,51 @@
     }
 
     &__content{
-      padding: 30px 70px;
       display: none;
+
+      @include mq-desktop-up(){
+        padding: 30px 70px;
+      }
+      @include mq-tablet(){
+        padding: 30px;
+      }
 
       &--active{
         display: block;
       }
     }
+    &__services{
+      padding: 0;
+      margin: 0;
+    }
+    &__service{
+      list-style-type: none;
+      padding-left: 50px;
+      position: relative;
+      margin-bottom: 20px;
+
+      &:before{
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        display: block;
+      }
+
+      &--included{
+        color: $light_blue;
+
+        &:before{
+          content: url(../../assets/images/included.png);
+        }
+      }
+      &--excluded{
+        &:before{
+          content: url(../../assets/images/excluded.png);
+        }
+      }
+    }
+
   }
 
 }

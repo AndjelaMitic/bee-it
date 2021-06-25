@@ -2,32 +2,37 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" container="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bee IT</title>
     <link rel="stylesheet" type="text/css" href="./dist/css/style.min.css">
     <link rel="stylesheet" type="text/css" href="./dist/css/responsive.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <script type="text/javascript" src='./dist/js/app.js'></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
-  <header>
-    <div class='container container--large'>
-      <div class='flex full-width align-items justify-between'>
-        <div class='flex justify-start primaryNav'>
-          <a href='' class='primaryNav__logo'>
+  <header class='header'>
+    <div class='container container--large header__container'>
+      <div class="header__wrapper">
+        <div class='header__logo'>
+          <a href='' class='header__logoLink'>
             <img src='./assets/images/world-travel.png' alt='World Travel' title='World Travel' width='73' height='71'>
           </a>
-          <ul>
-            <li><a href="#">Info</a></li>
-            <li><a href="#"></a>About us</li>
-            <li><a href="#"></a>Contact</li>
-          </ul>
         </div>
-        <div class='flex justify-end'>
-          <div class='secondaryNav'>
-            <a class='secondaryNav__login' href="#">Login</a>
-            <a class="secondaryNav__currency" href="#">EN-UK($)</a>
+        <div class='header__navigation'>
+          <div class="header__primary">
+            <ul class='header__nav header__nav--primary'>
+              <li class="header__itemNav"><a class='header_link' href="#">Info</a></li>
+              <li class="header__itemNav"><a class='header_link' href="#">About us</a></li>
+              <li class="header__itemNav"><a class='header_link' href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="header__secondary">
+            <a class='header_link header_link--secondary header__login' href="#">Login</a>
+            <a class="header__link header__link--secondary header__currency" href="#">EN-UK(£)</a>
           </div>
         </div>
       </div>
@@ -39,7 +44,7 @@
     </section>
     <section class='advantages'>
       <div class='container flex wrap justify-between'>
-        <p class='advantages__lead'>Low cost doens'm mean cheap</p>
+        <p class='advantages__lead'>Low cost doesn't mean cheap</p>
         <h2 class='advantages__heading'>Fly smart, fly with Green Earth</h2>
         <div class='advantages__item'>
             <div class='advantages__image'>
@@ -80,10 +85,13 @@
       </div>
     </section>
     <section class='offers'>
-      <div class="container flex wrap">
+      <div class="container flex wrap center">
         <h3 class="offers__heading">Showing our offers from</h3>
-        <div class="offers__item offers__item--promotion">
-          <img class='offers_img' src="./assets/images/london.jpg" width="240" height="170" alt="London" title="London">
+        <div class="offers__item">
+          <div class="offers__promotion">
+            <p class='offers__promotionText'>3h left at this rate</p>
+          </div>
+          <img class='offers__img' src="./assets/images/london.jpg" width="240" height="170" alt="London" title="London">
           <div class="offers__description">
             <h4 class='offers__title'>London</h4>
             <p class='offers_price'>from 59</p>
@@ -91,7 +99,7 @@
           </div>
         </div>
         <div class="offers__item">
-          <img class='offers_img' src="./assets/images/hamburg.jpg" width="240" height="170" alt="Hamburg" title="Hamburg">
+          <img class='offers__img' src="./assets/images/hamburg.jpg" width="240" height="170" alt="Hamburg" title="Hamburg">
           <div class="offers__description">
             <h4 class='offers__title'>Hamburg</h4>
             <p class='offers__price'>from 79</p>
@@ -99,7 +107,7 @@
           </div>
         </div>
         <div class="offers__item">
-          <img class='offers_img' src="./assets/images/alicante.jpg" width="240" height="170" alt="Alicante" title="Alicante">
+          <img class='offers__img' src="./assets/images/alicante.jpg" width="240" height="170" alt="Alicante" title="Alicante">
           <div class="offers__description">
             <h4 class='offers__title'>Alicante</h4>
             <p class="offers__price">from 89</p>
@@ -107,7 +115,7 @@
           </div>
         </div>
         <div class="offers__item">
-          <img class='offers_img' src="./assets/images/milano.jpg" width="240" height="170" alt="Milano" title="Milano">
+          <img class='offers__img' src="./assets/images/milano.jpg" width="240" height="170" alt="Milano" title="Milano">
           <div class="offers__description">
             <h4 class='offers__title'>Milano</h4>
             <p class='offers__price'>from 119</p>
@@ -131,7 +139,7 @@
         <p class="packages__text-right">
           <a href="#" class="packages__link packages__link--dashed">View all servises & upgrades</a>
         </p>
-        <div class='tabs js-packages-tabs'>
+        <div class='tabs tabs--desktop js-packages-tabs'>
           <ul class="tabs__navigation clearfix">
             <li class='tabs__link'><a data-target='regular' class='tabs__btn tabs__btn--active js-btn' href='#'>Regular</a></li>
             <li class='tabs__link'><a data-target='plus' class='tabs__btn js-btn' href='#'>Plus</a></li>
@@ -144,17 +152,17 @@
                   <img src="./assets/images/regular.png" width='200' height="200" alt="Regular travel">
                 </div>
                 <div class="column-3">
-                  <ul class='tabs__included'>
-                    <li>Reclinable seats</li>
-                    <li>1 Hand luggage</li>
-                    <li>Extra leg room</li>
+                  <ul class='tabs__services'>
+                    <li class="tabs__service tabs__service--included">Reclinable seats</li>
+                    <li class="tabs__service tabs__service--included">1 Hand luggage</li>
+                    <li class="tabs__service tabs__service--included">Extra leg room</li>
                   </ul>
                 </div>
                 <div class="column-3">
-                  <ul class='tabs__excluded'>
-                    <li>Extra cabin luggage</li>
-                    <li>Extra hold luggage</li>
-                    <li>Lounge access </li>
+                  <ul class='tabs__services'>
+                    <li class="tabs__service tabs__service--excluded">Extra cabin luggage</li>
+                    <li class="tabs__service tabs__service--excluded">Extra hold luggage</li>
+                    <li class="tabs__service tabs__service--excluded">Lounge access </li>
                   </ul>
                 </div>
               </div>
@@ -165,17 +173,17 @@
                   <img src="./assets/images/regular.png" width='200' height="200" alt="Plus travel">
                 </div>
                 <div class="column-3">
-                  <ul class='tabs__included'>
-                    <li>Reclinable seats</li>
-                    <li>1 Hand luggage</li>
-                    <li>Extra leg room</li>
+                  <ul class='tabs__services'>
+                    <li class="tabs__service tabs__service--included">Reclinable seats</li>
+                    <li class="tabs__service tabs__service--included">1 Hand luggage</li>
+                    <li class="tabs__service tabs__service--included">Extra leg room</li>
                   </ul>
                 </div>
                 <div class="column-3">
-                  <ul class='tabs__excluded'>
-                    <li>Extra cabin luggage</li>
-                    <li>Extra hold luggage</li>
-                    <li>Lounge access </li>
+                  <ul class='tabs__services'>
+                    <li class="tabs__service tabs__service--excluded">Extra cabin luggage</li>
+                    <li class="tabs__service tabs__service--excluded">Extra hold luggage</li>
+                    <li class="tabs__service tabs__service--excluded">Lounge access </li>
                   </ul>
                 </div>
               </div>
@@ -186,27 +194,81 @@
                   <img src="./assets/images/regular.png" width='200' height="200" alt="Premium travel">
                 </div>
                 <div class="column-3">
-                  <ul class='tabs__included'>
-                    <li>Reclinable seats</li>
-                    <li>1 Hand luggage</li>
-                    <li>Extra leg room</li>
+                  <ul class='tabs__services'>
+                    <li class="tabs__service tabs__service--included">Reclinable seats</li>
+                    <li class="tabs__service tabs__service--included">1 Hand luggage</li>
+                    <li class="tabs__service tabs__service--included">Extra leg room</li>
                   </ul>
                 </div>
                 <div class="column-3">
-                  <ul class='tabs__excluded'>
-                    <li>Extra cabin luggage</li>
-                    <li>Extra hold luggage</li>
-                    <li>Lounge access </li>
+                  <ul class='tabs__services'>
+                    <li class="tabs__service tabs__service--excluded">Extra cabin luggage</li>
+                    <li class="tabs__service tabs__service--excluded">Extra hold luggage</li>
+                    <li class="tabs__service tabs__service--excluded">Lounge access </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="tabs tabs--mobile">
+          Mobile tabs
+        </div>
+      </div>
+    </section>
+    <section class='newsletter'>
+      <div class='container container--large'>
+        <div class="newsletter__wrapper">
+          <div class="newsletter__subscribe">
+            <h4 class='newsletter__title'>Subscribe to our</h4>
+            <div class="newsletter__form">
+              <form>
+                <input class='newsletter__input' type="text" name="email" placeholder="Enter your email address">
+                <input class='newsletter__sumbit' type="submit" name="submit" value="Send">
+              </form>
+            </div>
+          </div>
+          <div class="newsletter__socials">
+            <p class='newsletter__socialTitle'>Follow us</p>
+            <a href='#' class="newsletter__socialIcon">
+              <img src="./assets/images/facebook.png"  alt="Facebook">
+            </a>
+            <a href='#' class="newsletter__socialIcon">
+              <img src="./assets/images/twitter.png"  alt="Twitter">
+            </a>
+            <a href='#' class="newsletter__socialIcon">
+              <img src="./assets/images/instagram.png"  alt="Instagram">
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
-  <footer>
+  <footer class='payment'>
+    <div class='container container--large'>
+      <div class="payment__wrapper">
+        <div class="payment__images">
+          <div class="payment__card">
+            <img src="./assets/images/master-card.png"  alt="Master card">
+          </div>
+          <div class="payment__card">
+            <img src="./assets/images/visa.png"  alt="Visa">
+          </div>
+          <div class="payment__card">
+            <img src="./assets/images/american-express.png"  alt="American Express">
+          </div>
+          <div class="payment__card">
+            <img src="./assets/images/pay-pal.png"  alt="Pay Pal">
+          </div>
+        </div>
+        <div class="payment__navigation">
+          <ul class='payment__nav clearfix'>
+            <li class='payment__navItem'><a class='payment__link' href="#">Terms & Privacy</a></li>
+            <li class='payment__navItem'><a class='payment__link' href="#">Site Map</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
 </body>
 </html>

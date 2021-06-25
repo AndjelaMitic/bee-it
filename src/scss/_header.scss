@@ -1,0 +1,79 @@
+.header{
+  padding: 20px 0;
+    &__wrapper{
+      display: flex;
+      @include mq-tablet-up(){
+        align-items: center;
+      }
+    }
+    &__logo{
+      display: flex;
+      justify-content: flex-start;
+    }
+    &__navigation{
+      display: flex;
+      width: 100%;
+      @include mq-tablet-up(){
+        justify-content: space-between;
+      }
+      @include mq-mobile(){
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+    &__primary{
+      display: flex;
+      justify-content: flex-start;
+      @include mq-mobile(){
+        justify-content: flex-end;
+        order: 2;
+        width: 100%;
+      }
+    }
+    &__secondary{
+      display: flex;
+      align-items: center;
+      @include mq-mobile(){
+        justify-content: flex-end;
+        order: 1;
+        width: 100%;
+      }
+    }
+    &__nav{
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    &__itemNav{
+      display: inline-block;
+      font-size: 16px;
+      font-weight: 400;
+      color:$middle_blue;
+      margin-left: 35px;
+    }
+    &__link{
+      &--secondary{
+          text-transform: uppercase;
+          font-size: 16px;
+          color: $dark_blue;
+      }
+    }
+    &__login{
+      padding-right: 20px;
+      border-right: 1px solid #e5e7e9;
+    }
+    &__currency{
+      position: relative;
+      padding-left: 50px;
+      margin-left: 20px;
+      &::before{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        content: url(../../assets/images/Flag_of_the_United_Kingdom.png);
+        display: block;
+      }
+    }
+}

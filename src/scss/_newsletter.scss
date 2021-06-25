@@ -1,0 +1,144 @@
+.newsletter{
+  background-color: $middle_blue;
+  padding: 17px 0;
+  color: white;
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include mq-desktop-up(){
+      justify-content: space-between;
+    }
+
+  }
+  &__subscribe{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    @include mq-desktop-up(){
+      width: auto;
+      justify-content: flex-start;
+    }
+  }
+
+  &__title{
+    font-size: 24px;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    @include mq-desktop-up(){
+      margin-right: 50px;
+      width: auto;
+      text-align: left;
+    }
+  }
+  &__form{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include mq-desktop-up(){
+      width: auto;
+      max-width: inherit;
+      border-bottom: 1px solid white;
+    }
+    @include mq-tablet(){
+      max-width: 680px;
+    }
+    @include mq-mobile(){
+      max-width: 420px;
+    }
+
+    form{
+      width: 100%;
+    }
+
+  }
+  &__input{
+    outline:0;
+    box-shadow: none;
+    padding: 4px;
+    color: white;
+    font-size: 16px;
+    border:0;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+
+    @include mq-desktop-up(){
+      border: 0;
+      width:370px;
+    }
+
+    &::placeholder{
+      color: rgba(255,255,255,0.23);
+    }
+    &:focus{
+      border-bottom: 1px solid $light_blue;
+    }
+  }
+  &__sumbit{
+    font-size: 20px;
+    font-weight: 400;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    color: $middle-blue;
+    padding: 10px;
+    width: 100%;
+    margin-top: 30px;
+
+    @include mq-desktop-up{
+      width: auto;
+      margin-top: 0;
+      padding: 4px 20px 4px 4px;
+      color: white;
+      background-color: transparent;
+      background-image: url(../../assets/images/arrow.png);
+      background-repeat: no-repeat;
+      background-position: center right;
+    }
+  }
+  &__socials{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include mq-desktop-up(){
+      background-color: transparent;
+    }
+  }
+  &__socialTitle{
+    font-size: 24px;
+    font-weight: 400;
+    color: $light_blue;
+    width: 100%;
+    text-align: center;
+    @include mq-desktop-up(){
+      color: white;
+      width: auto;
+    }
+  }
+  &__socialIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 500px;
+    width: 60px;
+    height: 60px;
+    border:1px solid $middle-grey;
+    @include mq-desktop-up(){
+      border: 1px solid rgba(255,255,255,.2);
+    }
+  }
+}
