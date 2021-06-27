@@ -8,6 +8,11 @@ $dark-grey:#666666;
 $yellow: #ffed28;
 $dark-yellow: #b3a61d;
 
+// %large-title{
+//   font-size: 50px;
+//   font-weight: bold;
+// }
+
 *, ::after, ::before {
   box-sizing: border-box;
 }
@@ -28,6 +33,7 @@ body{
 
   a{
     text-decoration: none;
+    // @extend large-title;
   }
   .full-width{
     width: 100%;

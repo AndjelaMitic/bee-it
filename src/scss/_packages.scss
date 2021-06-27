@@ -77,9 +77,14 @@
       padding: 15px;
       font-weight: 600;
       font-size: 24px;
+      border: 0;
+      box-shadow: 0;
+      outline: 0;
+      cursor: pointer;
       color: $paragraf;
 
-      &--active{
+      &--active,
+      &:hover{
         background-color: white;
         color: $middle_blue;
         font-weight: 700;

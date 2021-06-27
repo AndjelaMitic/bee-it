@@ -1,7 +1,74 @@
-.carousel{
+.slider{
+    overflow: hidden;
+
+  &__track{
+    overflow: visible;
+    white-space: nowrap;
+    transform: translateX(10px);
+    transition: transform ease-in-out 2s;
+  }
+  &__slide{
+    position: relative;
+    width: 100%;
+    display: inline-block;
+
+    &--active{
+      display: block;
+    }
+  }
   img{
     max-width: 100%;
     width: 100%;
     height: auto;
+  }
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &__description{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 370px;
+  }
+  &__title{
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+    margin: 0 0 15px;
+    line-height: 1;
+  }
+  &__lead{
+    width: 100%;
+    font-weight: 400;
+    color: white;
+    font-size: 20px;
+    margin: 0 0 15px;
+  }
+  &__button{
+    display: inline-block;
+    background-color: $middle-blue;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 25px;
+  }
+  &__controls{
+    position: absolute;
+    right: 15%;
+    z-index: 9;
+  }
+  &__arrow{
+    background: green;
+    &--disable{
+      background: red;
+    }
   }
 }
