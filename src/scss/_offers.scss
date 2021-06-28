@@ -1,11 +1,11 @@
 .offers{
   background: $middle_blue;
-  padding: 50px 0;
+  padding: 55px 0 65px;
 
   &__heading{
       color: white;
       font-size: 20px;
-      margin: 0 0 20px 0;
+      margin: 0 0 25px 0;
       width: 100%;
       font-weight: 400;
       @include mq-mobile(){
@@ -21,9 +21,9 @@
 
       @include mq-desktop-up(){
         margin-bottom: 0;
-        flex: 0 0 23.5%;
-        max-width: 23.5%;
-        margin-left: 2%;
+        flex: 0 0 23.3%;
+        max-width: 23.3%;
+        margin-left: 2.26%;
         &:nth-of-type(1){
           margin-left: 0;
         }
@@ -42,24 +42,24 @@
     &__promotion{
         position: absolute;
         top:  10px;
-        left: -5px;
+        left: -10px;
         background: $yellow;
         padding: 5px;
         &::before{
           position: absolute;
-          top: 30px;
+          top: 37px;
           left: 0px;
           content: '';
           width: 0;
           height: 0;
-          border-top: 5px solid $dark-yellow;
-          border-left: 5px solid transparent;
+          border-top: 10px solid $dark-yellow;
+          border-left: 10px solid transparent;
         }
     }
     &__promotionText{
       margin: 0;
       padding: 0;
-      font-size: 15px;
+      font-size: 20px;
       font-weight: 700;
       color: $middle_blue;
     }
@@ -69,14 +69,14 @@
     }
     &__description{
       color: $middle_blue;
-      padding: 20px 30px;
+      padding: 25px 35px;
     }
     &__title{
       font-size: 24px;
-      margin:0 0 10px 0;
+      margin:0;
       font-weight: 700;
     }
-    &__text{
+    &__price{
       font-size: 20px;
       font-weight: 400;
       margin: 0 0 35px;
@@ -84,6 +84,6 @@
     &__link{
       font-size: 24px;
       font-weight: 700;
-      color: $dark_blue;
+      color: $middle_blue;
     }
 }

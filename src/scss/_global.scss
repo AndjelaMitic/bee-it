@@ -1,17 +1,15 @@
 $light_blue: #38bdff;
 $middle_blue: #002f9d;
 $dark_blue: #021f59;
-$paragraf: #757575;
-$light-grey: #f2f2f2;
+$paragraf: #878787;
+$light-grey: #f0f0f0;
 $middle-grey: #b3b3b3;
 $dark-grey:#666666;
 $yellow: #ffed28;
 $dark-yellow: #b3a61d;
+$excluded: rgba(3,19,38,0.3);
+$footerNav: #666666;
 
-// %large-title{
-//   font-size: 50px;
-//   font-weight: bold;
-// }
 
 *, ::after, ::before {
   box-sizing: border-box;
@@ -65,7 +63,6 @@ body{
       max-width: 33.33%;
       flex: 0 0 33.33%;
       display: flex;
-      justify-content: center;
       align-items: center;
     }
   }

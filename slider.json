@@ -23,6 +23,22 @@
          "buttonLink":"#",
          "imagePath":"./assets/images/Slide.jpg",
          "imageDesc":"Enjoy our hot summer deals"
+      },
+      {
+         "slideTitle":"Enjoy our hot summer deals",
+         "slideLead":"from 69.50",
+         "buttonText":"Book now!",
+         "buttonLink":"#",
+         "imagePath":"./assets/images/Slide.jpg",
+         "imageDesc":"Enjoy our hot summer deals"
+      },
+      {
+         "slideTitle":"Enjoy our hot summer deals",
+         "slideLead":"from 69.50",
+         "buttonText":"Book now!",
+         "buttonLink":"#",
+         "imagePath":"./assets/images/Slide.jpg",
+         "imageDesc":"Enjoy our hot summer deals"
       }
    ],
    "arrows": {

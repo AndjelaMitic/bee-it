@@ -1,33 +1,37 @@
 .packages{
   background-color: $dark-blue;
-  padding: 50px 0;
+  padding: 90px 0;
 
   &__info{
-    max-width: 520px;
+    max-width: 720px;
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    margin-bottom:60px;
+    margin-bottom:55px;
     h3{
       color: $light-blue;
-      font-size: 45px;
+      font-size: 50px;
       font-weight: 700;
       margin: 0 0 20px 0;
+      line-height: 1;
     }
   }
 
   &__text{
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 400;
-    margin: 0 0 15px 0;
+    margin: 0 0 5px 0;
     &--uppercase{
       text-transform: uppercase;
+      font-size: 16px;
     }
   }
 
   &__text-right{
     text-align: right;
+    margin: 0 0 25px 0;
+    padding: 0;
   }
   &__link{
     color: $light-blue;
@@ -38,6 +42,9 @@
     }
   }
 
+
+
+
   .tabs{
     background-color: white;
 
@@ -47,14 +54,6 @@
       }
       @include mq-mobile(){
         display: none;
-      }
-    }
-    &--mobile{
-      @include mq-tablet-up(){
-        display: none;
-      }
-      @include mq-mobile(){
-        display: block;
       }
     }
 
@@ -75,16 +74,31 @@
       width: 100%;
       display: block;
       padding: 15px;
-      font-weight: 600;
-      font-size: 24px;
+      font-weight: 400;
+      font-size: 32px;
       border: 0;
       box-shadow: 0;
       outline: 0;
       cursor: pointer;
       color: $paragraf;
 
-      &--active,
       &:hover{
+        background-color: white;
+        color: $middle_blue;
+        position: relative;
+
+        &::before{
+          position: absolute;
+          content: '';
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background-color: $light-blue;
+        }
+      }
+
+      &--active{
         background-color: white;
         color: $middle_blue;
         font-weight: 700;
@@ -106,7 +120,7 @@
       display: none;
 
       @include mq-desktop-up(){
-        padding: 30px 70px;
+        padding: 40px 70px;
       }
       @include mq-tablet(){
         padding: 30px;
@@ -125,6 +139,7 @@
       padding-left: 50px;
       position: relative;
       margin-bottom: 20px;
+      font-size: 20px;
 
       &:before{
         position: absolute;
@@ -135,17 +150,58 @@
       }
 
       &--included{
-        color: $light_blue;
-
+        color: $dark_blue;
         &:before{
           content: url(../../assets/images/included.png);
         }
       }
       &--excluded{
+        color: $excluded;
+
         &:before{
           content: url(../../assets/images/excluded.png);
         }
       }
+    }
+
+    &--mobile{
+      background-color: transparent;
+
+      @include mq-tablet-up(){
+        display: none;
+      }
+      @include mq-mobile(){
+        display: block;
+      }
+      .tabs__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+      }
+      .tabs__content{
+        border-top: 10px solid $middle_blue;
+        background-color: white;
+        display: block;
+        margin: 20px 0;
+        padding: 40px;
+        max-width: 400px;
+        width: 100%;
+        min-width: 280px;
+      }
+      .tabs__imgWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .tabs__link{
+        width: 100%;
+        background-color: transparent;
+        float: none;
+      }
+
     }
 
   }

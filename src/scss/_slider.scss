@@ -1,11 +1,11 @@
 .slider{
     overflow: hidden;
+    position: relative;
 
   &__track{
     overflow: visible;
     white-space: nowrap;
-    transform: translateX(10px);
-    transition: transform ease-in-out 2s;
+    transform: translateX(0px);
   }
   &__slide{
     position: relative;
@@ -35,6 +35,8 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    word-break: break-all;
+    white-space: pre-wrap;
     max-width: 370px;
   }
   &__title{
@@ -42,33 +44,40 @@
     color: white;
     font-weight: 700;
     font-size: 50px;
-    margin: 0 0 15px;
+    margin: 0 0 20px;
     line-height: 1;
   }
   &__lead{
     width: 100%;
     font-weight: 400;
     color: white;
-    font-size: 20px;
-    margin: 0 0 15px;
+    font-size: 24px;
+    margin: 0 0 20px;
   }
   &__button{
     display: inline-block;
     background-color: $middle-blue;
     color: white;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
-    padding: 15px 25px;
+    padding: 14px 28px;
   }
   &__controls{
     position: absolute;
     right: 15%;
     z-index: 9;
+    top: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__arrow{
-    background: green;
+    &--next{
+      margin-left: 15px;
+    }
     &--disable{
-      background: red;
+      opacity: 0.3;
+      cursor: default;
     }
   }
 }

@@ -32,7 +32,7 @@ const tabs = {};
   tabs.init();
 
 
-//-------------------- AJAX - SLIDER-------------------------------------------------------------------
+
 const slider = {};
 
 
@@ -66,9 +66,26 @@ slider.start = function(sliderSelector){
 
   // DOM elements
   slider.$ctx = $(slider.selectors.ctx);
+
   //Variables
   slider.slideIndex = 1;
   slider.count = 0;
+
+  // Getters
+  /**
+  * Getter for current slide index
+  * @returns {Number}
+  */
+  slider.getCurrentSlide = function(){
+    return slider.slideIndex;
+  }
+  /**
+  * Getter for current slide width
+  * @returns {Number}
+  */
+  slider.getSlideWidth = function(){
+    return Number(slider.$ctx.width());
+  }
 
   // Methods
   /**
@@ -79,9 +96,13 @@ slider.start = function(sliderSelector){
     $.ajax({
       url: slider.remote.dataServlet
     })
-    .done(function( data ) {
+    .done(function(data){
       slider.count = data.slides.length;
       slider.render(data);
+    })
+    .fail(function(jqXHR) {
+      console.error(`An error occurred! Status code ${jqXHR.status} - ${jqXHR.statusText}`);
+      console.warn(jqXHR);
     });
   }
   slider.getData();
@@ -108,6 +129,7 @@ slider.start = function(sliderSelector){
       });
       track.append(slides);
       slider.$ctx.append(track);
+      slider.checkArrows();
     }
   }
 
@@ -155,9 +177,39 @@ slider.start = function(sliderSelector){
     return description;
   }
 
+  /**
+  * Call checkArrows and slideLeft functions
+  * @returns {void}
+  */
   slider.prev = function(){
-
+    const btn = $(this);
+    if (btn.hasClass(slider.states.disableArrow)) {
+      return;
+    }
+    if (slider.slideIndex -1  >= 1) {
+      slider.slideIndex--;
+      slider.checkArrows();
+      slider.slideLeft();
+    } else {
+      btn.addClass(slider.states.disableArrow);
+    }
   }
+
+  /**
+  * Showing previous slide
+  * @returns {void}
+  */
+  slider.slideLeft = function(){
+    const slideWidth = slider.getSlideWidth();
+    let transform = Number($(`.${slider.dynamicClasses.slideTrack}`).css('transform').split(',')[4]);
+    transform += slideWidth;
+    slider.setStyle(transform,0.5);
+  }
+
+  /**
+  * Call checkArrows and slideRight functions
+  * @returns {void}
+  */
   slider.next = function(){
     const btn = $(this);
     if (btn.hasClass(slider.states.disableArrow)) {
@@ -169,18 +221,23 @@ slider.start = function(sliderSelector){
       slider.slideRight();
     }
   }
+
+  /**
+  * Showing next slide
+  * @returns {void}
+  */
   slider.slideRight = function(){
-    const sliderWidth = slider.$ctx.width();
-    const track = $(`.${slider.dynamicClasses.slideTrack}`);
-    let transform = track.css('transform').split(',')[4];
-    transform -= sliderWidth;
-    track.css('transform',`translateX(${transform}px)`);
-
-
-    console.log(transform);
+    const slideWidth = slider.getSlideWidth();
+    let transform = Number($(`.${slider.dynamicClasses.slideTrack}`).css('transform').split(',')[4]);
+    transform -= slideWidth;
+    slider.setStyle(transform,0.5);
   }
+
+  /**
+  * Checking arrows by conditions and call disableArrow or enableArrow functions
+  * @returns {void}
+  */
   slider.checkArrows = function(){
-    console.log(slider.slideIndex,slider.count);
     if (slider.slideIndex === slider.count) {
       slider.disableArrow(slider.dynamicClasses.slideNext);
     } else {
@@ -192,20 +249,51 @@ slider.start = function(sliderSelector){
       slider.enableArrow(slider.dynamicClasses.slidePrevious);
     }
   }
+
+  /**
+  * Add disable class to the control button
+  * @param {String} btn - Selector for control button-arrow
+  * @returns {void}
+  */
   slider.disableArrow = function(btn){
-    console.log(btn);
     $(`.${btn}`).addClass(slider.states.disableArrow);
   }
+
+  /**
+  * Remove disable class to the control button
+  * @param {String} btn - Selector for control button-arrow
+  * @returns {void}
+  */
   slider.enableArrow = function(btn){
     $(`.${btn}`).removeClass(slider.states.disableArrow);
   }
+
+  /**
+  * Set css style to the slide track
+  * @param {Number} position - Numbers to transform track
+  * @param {Number} seconds - Numbers to animation track
+  * @returns {void}
+  */
+  slider.setStyle = function (position,seconds){
+    const track = $(`.${slider.dynamicClasses.slideTrack}`);
+    track.css('transform',`translateX(${position}px)`);
+    track.css('transition',`transform ease-in-out ${seconds}s`);
+  }
+
+  /**
+  * Positioning slide track to current slide
+  * @returns {void}
+  */
+  slider.positioning = function(){
+    let currentSlide = slider.getCurrentSlide();
+    const slideWidth = slider.getSlideWidth();
+
+    if (currentSlide !== 1) {
+      let newPositionCurrentSlide = (--currentSlide)*slideWidth;
+      slider.setStyle(-newPositionCurrentSlide,0);
+    }
+  }
 }
+
 slider.start('js-slider');
-
-
-
-
-
-
-
-//-------------------------------------- SLIDER FUNCTIONALITY------------------------------------------
+$(window).on('resize', slider.positioning);

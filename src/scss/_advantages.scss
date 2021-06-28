@@ -1,26 +1,28 @@
 .advantages{
   .container{
-    margin: 60px auto 0;
+    margin: 60px auto 5px;
   }
   &__lead{
       text-align: center;
       text-transform: uppercase;
       font-size: 16px;
+      font-weight: 400;
       color: $paragraf;
       width: 100%;
-      margin: 0 0 10px 0;
+      margin: 0 0 20px 0;
     }
     &__heading{
       text-align: center;
       font-size: 50px;
       color: $middle_blue;
       width: 100%;
-      margin: 0 0 70px 0;
+      margin: 0 0 60px 0;
+      line-height: 0.8;
     }
     &__item{
       @include mq-desktop-up(){
-        flex: 0 0 40%;
-        max-width: 40%;
+        flex: 0 0 44%;
+        max-width: 44%;
       }
       @include mq-tablet(){
         flex: 0 0 49%;
@@ -36,7 +38,7 @@
       max-width: calc(100% - 132px);
       margin-left: 35px;
       float: right;
-      margin-bottom: 55px;
+      margin-bottom: 50px;
     }
     &__title{
       font-size: 24px;
