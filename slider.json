@@ -5,7 +5,8 @@
          "slideLead":"from 69.50",
          "buttonText":"Book now!",
          "buttonLink":"#",
-         "imagePath":"./assets/images/Slide.jpg",
+         "imagePath":"./assets/images/Slide-desktop.jpg",
+         "imagePathTablet":"./assets/images/Slide.jpg",
          "imageDesc":"Enjoy our hot summer deals"
       },
       {
@@ -13,7 +14,8 @@
          "slideLead":"from 69.50",
          "buttonText":"Book now!",
          "buttonLink":"#",
-         "imagePath":"./assets/images/Slide.jpg",
+         "imagePath":"./assets/images/Slide-desktop.jpg",
+         "imagePathTablet":"./assets/images/Slide.jpg",
          "imageDesc":"Enjoy our hot summer deals"
       },
       {
@@ -21,7 +23,8 @@
          "slideLead":"from 69.50",
          "buttonText":"Book now!",
          "buttonLink":"#",
-         "imagePath":"./assets/images/Slide.jpg",
+         "imagePath":"./assets/images/Slide-desktop.jpg",
+         "imagePathTablet":"./assets/images/Slide.jpg",
          "imageDesc":"Enjoy our hot summer deals"
       },
       {
@@ -29,7 +32,8 @@
          "slideLead":"from 69.50",
          "buttonText":"Book now!",
          "buttonLink":"#",
-         "imagePath":"./assets/images/Slide.jpg",
+         "imagePath":"./assets/images/Slide-desktop.jpg",
+         "imagePathTablet":"./assets/images/Slide.jpg",
          "imageDesc":"Enjoy our hot summer deals"
       },
       {
@@ -37,7 +41,8 @@
          "slideLead":"from 69.50",
          "buttonText":"Book now!",
          "buttonLink":"#",
-         "imagePath":"./assets/images/Slide.jpg",
+         "imagePath":"./assets/images/Slide-desktop.jpg",
+         "imagePathTablet":"./assets/images/Slide.jpg",
          "imageDesc":"Enjoy our hot summer deals"
       }
    ],

@@ -30,7 +30,7 @@
           </div>
           <div class="header__secondary">
             <a class='header_link header__link--secondary header__login' href="#">Login</a>
-            <a class="header__link header__link--secondary header__currency" href="#">EN-UK(£)</a>
+            <a class="header__link header__link--secondary header__currency" href="#"><span class='header__currency--language'>EN-UK</span><span class='header__currency--code'>(£)</span></a>
           </div>
         </div>
       </div>
@@ -132,7 +132,7 @@
         <div class='packages__info'>
           <p class='packages__text packages__text--uppercase'>Quality from the inside</p>
           <h3 class="packages__title">Travel the way you want</h3>
-          <p class="packages__text">Lorem ipsun dolor sit amet, cons adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ed minim veniam, quis nostrud exercitation ulnisi ut</p>
+          <p class="packages__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulnisi ut aliquip ex ea commodo. consequat.</p>
         </div>
         <p class="packages__text-right">
           <a href="#" class="packages__link packages__link--dashed">View all servises & upgrades</a>
@@ -147,7 +147,7 @@
             <div class="tabs__content tabs__content--active js-content" data-content='regular'>
               <div class="flex center">
                 <div class="column-3">
-                  <img src="./assets/images/regular.png" width='200' height="200" alt="Regular travel">
+                  <img class='tabs__image' src="./assets/images/regular.png" width='200' height="200" alt="Regular travel">
                 </div>
                 <div class="column-3">
                   <ul class='tabs__services'>
@@ -168,7 +168,7 @@
             <div class="tabs__content js-content" data-content='plus'>
               <div class="flex center">
                 <div class="column-3">
-                  <img src="./assets/images/regular.png" width='200' height="200" alt="Plus travel">
+                  <img class='tabs__image' src="./assets/images/regular.png" width='200' height="200" alt="Plus travel">
                 </div>
                 <div class="column-3">
                   <ul class='tabs__services'>
@@ -189,7 +189,7 @@
             <div class="tabs__content js-content" data-content='premium'>
               <div class="flex center">
                 <div class="column-3">
-                  <img src="./assets/images/regular.png" width='200' height="200" alt="Premium travel">
+                  <img class='tabs__image' src="./assets/images/regular.png" width='200' height="200" alt="Premium travel">
                 </div>
                 <div class="column-3">
                   <ul class='tabs__services'>
@@ -248,12 +248,11 @@
                   </div>
               </div>
               <div class="tabs__content">
-                <div class="tabs__imgWrapper">
                   <div class="tabs__imgWrapper">
-                    <img src="./assets/images/regular.png" width='200' height="200" alt="Premium travel">
+                    <img src="./assets/images/regular.png" width='200' height="200" alt="Plus travel">
                   </div>
-                  <div class="tabs__description">
-                    <h3 class='tabs__link'>Premium</h3>
+                  <div class="tabs_description">
+                    <h3 class='tabs__link'>Plus</h3>
                     <ul class='tabs__services'>
                       <li class="tabs__service tabs__service--included">Reclinable seats</li>
                       <li class="tabs__service tabs__service--included">1 Hand luggage</li>
@@ -265,7 +264,6 @@
                       <li class="tabs__service tabs__service--included">Lounge access </li>
                     </ul>
                   </div>
-                </div>
               </div>
             </div>
         </div>
@@ -285,14 +283,14 @@
           </div>
           <div class="newsletter__socials">
             <p class='newsletter__socialTitle'>Follow us</p>
-            <a href='#' class="newsletter__socialIcon">
-              <img src="./assets/images/facebook.png"  alt="Facebook">
+            <a href='#' class="newsletter__socialIcon newsletter__socialIcon--facebook">
+              <!-- <img src="./assets/images/facebook.png"  alt="Facebook"> -->
             </a>
-            <a href='#' class="newsletter__socialIcon">
-              <img src="./assets/images/twitter.png"  alt="Twitter">
+            <a href='#' class="newsletter__socialIcon newsletter__socialIcon--twitter">
+              <!-- <img src="./assets/images/twitter.png"  alt="Twitter"> -->
             </a>
-            <a href='#' class="newsletter__socialIcon">
-              <img src="./assets/images/instagram.png"  alt="Instagram">
+            <a href='#' class="newsletter__socialIcon newsletter__socialIcon--instagram">
+              <!-- <img src="./assets/images/instagram.png"  alt="Instagram"> -->
             </a>
           </div>
         </div>
@@ -303,16 +301,16 @@
     <div class='container container--large'>
       <div class="payment__wrapper">
         <div class="payment__images">
-          <div class="payment__card">
+          <div class="payment__card payment__card--mastercard">
             <img src="./assets/images/master-card.png"  alt="Master card">
           </div>
-          <div class="payment__card">
+          <div class="payment__card payment__card-visa">
             <img src="./assets/images/visa.png"  alt="Visa">
           </div>
-          <div class="payment__card">
+          <div class="payment__card payment__card--amex">
             <img src="./assets/images/american-express.png"  alt="American Express">
           </div>
-          <div class="payment__card">
+          <div class="payment__card payment__card--paypal">
             <img src="./assets/images/pay-pal.png"  alt="Pay Pal">
           </div>
         </div>

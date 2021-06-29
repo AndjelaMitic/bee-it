@@ -12,32 +12,58 @@
     width: 100%;
     display: inline-block;
 
+    @include mq-desktop-up(){
+      max-height: 550px;
+    }
+
     &--active{
       display: block;
     }
   }
-  img{
+  &__image{
     max-width: 100%;
     width: 100%;
     height: auto;
+    display: none;
+
+    &--desktop{
+      @include mq-desktop-up(){
+        display: block;
+      }
+    }
+    &--tablet{
+      @include mq-tablet(){
+        display: block;
+      }
+      @include mq-mobile(){
+        display: block;
+      }
+    }
+
   }
   .container{
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
+    top: 30px;
+    @include mq-tablet-up(){
+      top: 50%;
+      transform: translate(-50%,-50%);
+    }
   }
 
   &__description{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    word-break: break-all;
-    white-space: pre-wrap;
-    max-width: 370px;
+    @include mq-tablet-up(){
+      word-break: break-all;
+      white-space: pre-wrap;
+      max-width: 370px;
+    }
   }
   &__title{
     width: 100%;
@@ -46,6 +72,18 @@
     font-size: 50px;
     margin: 0 0 20px;
     line-height: 1;
+    @include mq-tablet(){
+      font-size: 40px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    @include mq-mobile(){
+      font-size: 25px;
+      word-break: break-all;
+      white-space: pre-wrap;
+      max-width: 180px;
+      margin-bottom: 5px;
+    }
   }
   &__lead{
     width: 100%;
@@ -53,6 +91,14 @@
     color: white;
     font-size: 24px;
     margin: 0 0 20px;
+
+    @include mq-tablet(){
+      font-size: 20px;
+    }
+    @include mq-mobile(){
+      font-size: 12px;
+      font-weight: 700;
+    }
   }
   &__button{
     display: inline-block;
@@ -61,6 +107,14 @@
     font-size: 24px;
     font-weight: 700;
     padding: 14px 28px;
+
+    @incude mq-tablet(){
+      font-size: 20px;
+    }
+    @include mq-mobile(){
+      font-size: 12px;
+      padding: 7px 14px;
+    }
   }
   &__controls{
     position: absolute;
@@ -70,14 +124,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include mq-tablet(){
+      right: 20px;
+    }
+    @include mq-mobile(){
+      bottom: 15px;
+      right: 20px;
+      top: auto;
+    }
   }
   &__arrow{
     &--next{
       margin-left: 15px;
     }
     &--disable{
-      opacity: 0.3;
+      opacity: 0.2;
       cursor: default;
+    }
+    img {
+      @include mq-mobile(){
+          width: 25px;
+          height: 25px;
+
+      }
     }
   }
 }

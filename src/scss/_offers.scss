@@ -2,6 +2,14 @@
   background: $middle_blue;
   padding: 55px 0 65px;
 
+  @include mq-mobile(){
+    padding: 40px 0 10px;
+  }
+
+  @include mq-tablet(){
+    padding: 55px 0 30px;
+  }
+
   &__heading{
       color: white;
       font-size: 20px;
@@ -10,6 +18,7 @@
       font-weight: 400;
       @include mq-mobile(){
         text-align: center;
+        font-size: 32px;
       }
     }
     &__item{
@@ -29,9 +38,10 @@
         }
       }
       @include mq-tablet(){
-        flex: 0 0 49%;
-        max-width: 49%;
-        margin-left: 2%;
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        margin-left: 10px;
+        margin-bottom: 30px;
         &:nth-of-type(odd){
           margin-left: 0;
         }
@@ -68,22 +78,53 @@
       height: auto;
     }
     &__description{
+      width: 100%;
       color: $middle_blue;
       padding: 25px 35px;
+      @include mq-tablet(){
+        padding: 20px;
+      }
+      @include mq-mobile(){
+        padding: 30px 20px;
+      }
     }
     &__title{
       font-size: 24px;
       margin:0;
       font-weight: 700;
+      line-height: 1;
+      color: $dark-blue;
+
+      @include mq-mobile(){
+        font-size: 28px;
+      }
     }
     &__price{
       font-size: 20px;
       font-weight: 400;
-      margin: 0 0 35px;
+      margin: 0 0 20px;
+      color: $dark-blue;
+
+      @include mq-mobile(){
+        font-size: 28px;
+      }
     }
     &__link{
       font-size: 24px;
       font-weight: 700;
       color: $middle_blue;
+      line-height: 1;
+      position: relative;
+
+      &:before{
+        content: url(../../assets/images/arrow-blue.png);
+        position: absolute;
+        bottom: 5px;
+        right: -20px;
+      }
+
+      @include mq-mobile(){
+        font-size: 28px;
+      }
     }
 }

@@ -2,12 +2,23 @@
   padding: 43px 0;
   text-align: center;
 
+  @include mq-mobile(){
+    padding: 30px 0;
+  }
+
   &__text{
     color: $middle_blue;
     font-weight: 400;
     font-size: 32px;
     margin:0;
     padding:0;
+
+    @include mq-tablet(){
+      font-size: 26px;
+    }
+    @include mq-mobile(){
+      font-size: 24px;
+    }
   }
 
   &__link{
@@ -18,6 +29,7 @@
     }
     @include mq-mobile(){
       display: inline-block;
+      font-size: 22px;
     }
   }
 

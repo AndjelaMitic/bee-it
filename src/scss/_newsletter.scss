@@ -4,6 +4,9 @@
   @include mq-desktop-up(){
     padding: 22px 0;
   }
+  @include mq-tablet(){
+    padding: 40px 0 0;
+  }
   &__wrapper{
     display: flex;
     align-items: center;
@@ -21,11 +24,11 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    padding-bottom: 60px;
     @include mq-desktop-up(){
       width: auto;
       justify-content: flex-start;
       padding-bottom: 0;
+      margin-right: 15px;
     }
   }
 
@@ -39,6 +42,10 @@
       margin-right: 50px;
       width: auto;
       text-align: left;
+    }
+    @include mq-tablet(){
+      font-size: 28px;
+      margin: 0 0 40px;
     }
   }
   &__form{
@@ -67,7 +74,8 @@
     box-shadow: none;
     padding: 4px;
     color: white;
-    font-size: 18     px;
+    font-size: 18px;
+    font-weight: 400;
     border:0;
     border-bottom: 1px solid white;
     background-color: transparent;
@@ -79,6 +87,9 @@
       border: 0;
       width:370px;
       float: left;
+    }
+    @include mq-tablet(){
+      font-size: 20px;
     }
 
     &::placeholder{
@@ -100,11 +111,17 @@
     color: $middle-blue;
     padding: 10px;
     width: 100%;
-    margin-top: 30px;
+    margin: 40px auto;
+
+    @include mq-mobile(){
+      font-size: 22px;
+      font-weight: 700;
+      margin: 25px auto 50px;
+    }
 
     @include mq-desktop-up{
       width: auto;
-      margin-top: 0;
+      margin: 0;
       padding: 4px 20px 4px 4px;
       color: white;
       background-color: transparent;
@@ -113,14 +130,20 @@
       background-position: center right;
       float: right;
     }
+
+    @include mq-tablet(){
+      font-weight: 700;
+      font-size: 22px;
+      max-width: 300px;
+      display: block;
+    }
   }
   &__socials{
     display: flex;
     align-items: center;
-    background-color: transparent;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 20px;
+    padding: 40px 20px;
     margin: 0 -20px;
     box-sizing: content-box;
     width: 100%;
@@ -130,19 +153,30 @@
       background-color: transparent;
       width: auto;
       padding: 0;
-      margin: 0 0 0 20px;
+      margin: 0;
       box-sizing: border-box;
+    }
+    @include mq-mobile(){
+      padding: 30px 20px;
     }
   }
   &__socialTitle{
     font-size: 24px;
     font-weight: 400;
-    color: $light_blue;
+    color: $middle_blue;
     width: 100%;
     text-align: center;
     @include mq-desktop-up(){
       color: white;
       width: auto;
+    }
+    @include mq-tablet(){
+      font-size: 28px;
+      margin:0 0 40px;
+    }
+    @include mq-mobile(){
+      font-size: 18px;
+      margin:0 0 20px;
     }
   }
   &__socialIcon{
@@ -153,7 +187,31 @@
     border-radius: 500px;
     width: 60px;
     height: 60px;
-    border:1px solid $middle-grey;
+    border:1px solid $socialIcon;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &--facebook{
+      background-image: url(../../assets/images/facebook-blue.png);
+      @include mq-desktop-up(){
+        background-image: url(../../assets/images/facebook.png);
+      }
+    }
+
+    &--twitter{
+      background-image: url(../../assets/images/twitter-blue.png);
+      @include mq-desktop-up(){
+        background-image: url(../../assets/images/twitter.png);
+      }
+    }
+
+    &--instagram{
+      background-image: url(../../assets/images/instagram-blue.png);
+      @include mq-desktop-up(){
+        background-image: url(../../assets/images/instagram.png);
+      }
+    }
+
     @include mq-desktop-up(){
       border: 1px solid rgba(255,255,255,.2);
     }

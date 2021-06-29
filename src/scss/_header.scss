@@ -1,10 +1,19 @@
 .header{
   padding: 20px 0;
+
+  @include mq-mobile(){
+    padding: 15px 0;
+  }
+
+  &__logoLink img{
+    @include mq-mobile(){
+      width: 37px;
+      height: 36px;
+    }
+  }
     &__wrapper{
       display: flex;
-      @include mq-tablet-up(){
-        align-items: center;
-      }
+      align-items: center;
     }
     &__logo{
       display: flex;
@@ -28,6 +37,7 @@
         justify-content: flex-end;
         order: 2;
         width: 100%;
+        margin-top: 10px;
       }
     }
     &__secondary{
@@ -44,29 +54,63 @@
       margin: 0;
       display: flex;
       align-items: center;
+      &--primary{
+        @include mq-desktop-up(){
+          margin-left: 35px;
+        }
+        @include mq-tablet(){
+          margin-left: 20px;
+        }
+      }
     }
     &__itemNav{
       display: inline-block;
-      font-size: 12 px;
+      font-size: 20px;
       font-weight: 400;
       color:$middle_blue;
       margin-left: 35px;
+      &:nth-of-type(1){
+        margin-left: 0;
+      }
+
+      @include mq-mobile(){
+        font-size: 14px;
+        font-weight: 700;
+        margin-left: 30px;
+      }
     }
     &__link{
+
       &--secondary{
           text-transform: uppercase;
           font-size: 16px;
           color: $dark_blue;
+          @include mq-tablet(){
+              font-size: 14px;
+          }
+          @include mq-mobile(){
+            color: black;
+            font-size: 11px;
+          }
       }
     }
     &__login{
       padding-right: 20px;
       border-right: 1px solid #e5e7e9;
+      @include mq-mobile(){
+        padding-right: 10px;
+      }
     }
     &__currency{
       position: relative;
       padding-left: 36px;
       margin-left: 20px;
+
+      @include mq-mobile(){
+        padding-left: 33px;
+        margin-left: 10px;
+      }
+
       &::before{
         position: absolute;
         top: 50%;
@@ -74,6 +118,20 @@
         transform: translateY(-50%);
         content: url(../../assets/images/Flag_of_the_United_Kingdom.png);
         display: block;
+
+        @include mq-mobile(){
+          width: 24px;
+          height: 12px;
+        }
+      }
+      &--language{
+        margin-right: 5px;
+        @include mq-mobile(){
+          display: none;
+        }
+      }
+      &--code{
+
       }
     }
 }

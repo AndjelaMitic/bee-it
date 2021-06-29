@@ -43,6 +43,8 @@ slider.start = function(sliderSelector){
      slideSlide: 'slider__slide js-slide',
      slideContainer: 'container',
      slideImage: 'slider__image',
+     slideImageDesktop: 'slider__image--desktop',
+     slideImageTablet: 'slider__image--tablet',
      slideDesc: 'slider__description',
      slideTitle: 'slider__title',
      slideLead: 'slider__lead',
@@ -154,8 +156,9 @@ slider.start = function(sliderSelector){
  */
   slider.generateSlide = function(slideData){
     let sliderItem = $(`<div class='${slider.dynamicClasses.slideSlide}'></div>`);
-    let image = $(`<img class='${slider.dynamicClasses.slideImage}' src='${slideData.imagePath}' alt='${slideData.imageDesc}'>`);
-    return sliderItem.append(image);
+    let image = $(`<img class='${slider.dynamicClasses.slideImage} ${slider.dynamicClasses.slideImageDesktop}' src='${slideData.imagePath}' alt='${slideData.imageDesc}'>`);
+    let imageTablet = $(`<img class='${slider.dynamicClasses.slideImage} ${slider.dynamicClasses.slideImageTablet}' src='${slideData.imagePathTablet}' alt='${slideData.imageDesc}'>`);
+    return sliderItem.append([image,imageTablet]);
   }
 
   /**
