@@ -107,6 +107,8 @@
     font-size: 24px;
     font-weight: 700;
     padding: 14px 28px;
+    border: 1px solid transparent;
+    transition: all ease-in-out 0.3s;
 
     @incude mq-tablet(){
       font-size: 20px;
@@ -114,6 +116,13 @@
     @include mq-mobile(){
       font-size: 12px;
       padding: 7px 14px;
+    }
+
+    &:hover{
+      background: transparent;
+      border: 1px solid $middle_blue;
+      color: $middle_blue;
+      transition: all ease-in-out 0.3s;
     }
   }
   &__controls{
@@ -135,6 +144,8 @@
     }
   }
   &__arrow{
+    transition: background ease-in-out 0.3s;
+    overflow: hidden;
     &--next{
       margin-left: 15px;
     }
@@ -147,6 +158,16 @@
           width: 25px;
           height: 25px;
 
+      }
+    }
+    img:hover{
+      background: rgba(255,255,255,0.1);
+      border-radius: 500px;
+      transition: background ease-in-out 0.3s;
+    }
+    &--disable{
+      img:hover{
+        background: transparent;
       }
     }
   }

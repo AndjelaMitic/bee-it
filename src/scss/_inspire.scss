@@ -24,8 +24,18 @@
   &__link{
     color: $middle_blue;
     font-weight: 700;
+    transition: all ease-in-out 0.3s;
+
+    &:hover{
+      color: $light-blue;
+      transition: color ease-in-out 0.3s;
+    }
     &--dashed{
       border-bottom: 1px dashed $middle_blue;
+      &:hover{
+        border-bottom: 1px dashed $light_blue;
+        transition: border-bottom ease-in-out 0.3s;
+      }
     }
     @include mq-mobile(){
       display: inline-block;

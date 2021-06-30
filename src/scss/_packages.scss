@@ -47,10 +47,6 @@
     font-weight: 400;
     margin: 0 auto 5px;
 
-    @include mq-mobile(){
-      font-weight: 300;
-      font-size: 14px;
-    }
     &--uppercase{
 
       text-transform: uppercase;
@@ -58,16 +54,21 @@
       max-width: 100%;
       font-size: 14px;
       font-weight: 400;
+      margin-bottom: 10px;
 
       @include mq-desktop-up(){
         font-size: 16px;
+        margin-bottom: 5px;
       }
     }
     @include mq-tablet(){
-      line-height: 1;
       font-size: 16px;
       max-width: 680px;
       width: 100%;
+    }
+    @include mq-mobile(){
+      font-weight: 300;
+      font-size: 14px;
     }
   }
 
@@ -101,6 +102,10 @@
     background-color: white;
 
     &--desktop{
+      box-shadow: 2px 0px 20px black;
+     -webkit-box-shadow: 2px 0px 20px black;
+     -moz-box-shadow: 2px 0px 20px black;
+
       @include mq-tablet-up(){
         display: block;
       }
@@ -205,9 +210,9 @@
     }
     &__service{
       list-style-type: none;
-      padding-left: 50px;
+      padding-left: 40px;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       font-size: 20px;
 
       &:before{
@@ -222,6 +227,9 @@
         color: $dark_blue;
         &:before{
           content: url(../../assets/images/included.png);
+          @include mq-tablet(){
+            top: -5px;
+          }
         }
       }
       &--excluded{
@@ -230,6 +238,9 @@
         &:before{
           top: -5px;
           content: url(../../assets/images/excluded.png);
+          @include mq-tablet(){
+            top: -8px;
+          }
         }
       }
 
@@ -268,6 +279,9 @@
         max-width: 400px;
         width: 100%;
         min-width: 280px;
+        box-shadow: 2px 0px 4px black;
+       -webkit-box-shadow: 2px 0px 4px black;
+       -moz-box-shadow: 2px 0px 4px black;
       }
       .tabs__imgWrapper{
         display: flex;
@@ -289,13 +303,16 @@
         font-size: 18px;
       }
       .tabs__services{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         &:last-child{
           margin-bottom: 0;
         }
       }
       .tabs__service{
         font-size: 14px;
+        &:before{
+          top: -5px;
+        }
         &--included{
           color: $dark-blue;
         }

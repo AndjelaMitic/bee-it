@@ -47,6 +47,9 @@
       font-size: 28px;
       margin: 0 0 40px;
     }
+    @include mq-mobile(){
+      line-height: 1.2;
+    }
   }
   &__form{
     display: flex;
@@ -58,7 +61,7 @@
       border-bottom: 1px solid white;
     }
     @include mq-tablet(){
-      max-width: 680px;
+      max-width: 560px;
     }
     @include mq-mobile(){
       max-width: 420px;
@@ -190,6 +193,7 @@
     border:1px solid $socialIcon;
     background-position: center;
     background-repeat: no-repeat;
+    transition: box-shadow ease-in-out 0.3s;
 
     &--facebook{
       background-image: url(../../assets/images/facebook-blue.png);
@@ -210,6 +214,13 @@
       @include mq-desktop-up(){
         background-image: url(../../assets/images/instagram.png);
       }
+    }
+
+    &:hover{
+      transition: box-shadow ease-in-out 0.3s;
+      box-shadow: 1px 0px 10px rgba(255,255,255,0.2);
+     -webkit-box-shadow: 1px 0px 10px rgba(255,255,255,0.2);
+     -moz-box-shadow: 1px 0px 10px rgba(255,255,255,0.2);
     }
 
     @include mq-desktop-up(){

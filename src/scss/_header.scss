@@ -5,6 +5,10 @@
     padding: 15px 0;
   }
 
+  &__mainTitle{
+    margin: 0;
+    padding: 0;
+  }
   &__logoLink img{
     @include mq-mobile(){
       width: 37px;
@@ -69,6 +73,8 @@
       font-weight: 400;
       color:$middle_blue;
       margin-left: 35px;
+      transition: color ease-in-out 0.3s;
+
       &:nth-of-type(1){
         margin-left: 0;
       }
@@ -78,13 +84,23 @@
         font-weight: 700;
         margin-left: 30px;
       }
+      &:hover a{
+        color: $light-blue;
+        transition: color ease-in-out 0.3s;
+      }
     }
     &__link{
+      transition: color ease-in-out 0.3s;
 
       &--secondary{
           text-transform: uppercase;
           font-size: 16px;
           color: $dark_blue;
+
+          &:hover{
+            color: $light-blue;
+            transition: color ease-in-out 0.3s;
+          }
           @include mq-tablet(){
               font-size: 14px;
           }
@@ -93,6 +109,7 @@
             font-size: 11px;
           }
       }
+
     }
     &__login{
       padding-right: 20px;
